@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>French Vocab Arcade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1>French Vocab Arcade</h1>
+      <p class="sub">Food & drink • Practice French ⇄ English</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><span id="score">0</span><label>Score</label></div>
+      <div class="stat"><span id="streak">0</span><label>Streak</label></div>
+      <button id="reset" class="btn btn-ghost" title="Reset saved progress">Reset</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="card">
+      <div class="mode-row">
+        <button class="btn" data-mode="flash">Flashcards</button>
+        <button class="btn" data-mode="mcq">Multiple choice</button>
+        <button class="btn" data-mode="type">Type it</button>
+        <label class="toggle">
+          <input type="checkbox" id="reverse" />
+          <span>Reverse (EN → FR)</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="speak" />
+          <span>🔊 Speak French</span>
+        </label>
+      </div>
+
+      <div class="prompt">
+        <div class="pill" id="modePill">Flashcards</div>
+        <div class="pill pill-soft" id="directionPill">FR → EN</div>
+      </div>
+
+      <div class="play">
+        <div class="big" id="question">Click “Next” to start</div>
+        <div class="small" id="hint"></div>
+
+        <div id="answerArea" class="answer-area"></div>
+
+        <div class="actions">
+          <button id="reveal" class="btn btn-ghost">Reveal</button>
+          <button id="next" class="btn btn-primary">Next</button>
+        </div>
+
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="card card-side">
+      <h2>Word list</h2>
+      <p class="small muted">From your photo (Food & drink). You can add more later in <code>script.js</code>.</p>
+      <div id="list" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="muted">Tip: Turn on “Reverse” once FR → EN feels easy.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
